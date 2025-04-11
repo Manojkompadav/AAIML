@@ -1,10 +1,8 @@
 import speech_recognition as sr
 from googletrans import Translator
 
-# Initialize recognizer
 recognizer = sr.Recognizer()
 
-# Initialize translator
 translator = Translator()
 
 def recognize_speech():
@@ -30,7 +28,6 @@ def translate_text(text, target_language='es'):
     return translated.text
 
 def speech_to_text_and_translate():
-    # Prompt user to select a language
     print("\n🌐 Enter the target language code (e.g., 'fr' for French, 'de' for German, 'hi' for Hindi, 'ja' for Japanese):")
     target_language = input("Target language code: ").strip().lower()
 
@@ -39,7 +36,6 @@ def speech_to_text_and_translate():
         translated_text = translate_text(recognized_text, target_language)
         return translated_text
 
-# Run the program
 if __name__ == "__main__":
     final_output = speech_to_text_and_translate()
     if final_output:
